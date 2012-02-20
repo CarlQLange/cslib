@@ -1,4 +1,4 @@
-#### cslib
+# cslib
 `cslib` is a small utilities library that I wrote when I began using coffeescript. Most of it is just sugar, like the `after` and `every` functions, which are just wrappers for `setTimeout` and `setInterval`, switching the order of the arguments. There are a couple of other functions that I've found really handy, especially `once`.
 
 `once` is this great little function to prevent dealing with a big eventing architecture. One of javascript's biggest flaws, and one that people love to whinge about, is the way that you need callbacks for basically everything. This is a nice little shim to prevent that (even though it's pretty much the exact opposite of best practices.)
@@ -56,3 +56,5 @@ While it's not quite as nice as the Ruby version, I could also write it as a fun
 This, by the way, is the nicest usage of the double-colon operator I've ever seen in a language. While it's extremely similar to JavaScript (`Number::times` just compiles to `Number.prototype.times`), it's a really nice way to write that.
 
 In summary, `cslib` is a little sugar to make CoffeeScript just a little bit more like Python.
+
+*For full usage examples, just read the cslib.coffee file!*
