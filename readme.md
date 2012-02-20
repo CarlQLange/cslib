@@ -1,4 +1,7 @@
 # cslib
+
+*(this is an except from a dev journal I wrote for college - apologies that it's a little bit low on information and high on fluff)*
+
 `cslib` is a small utilities library that I wrote when I began using coffeescript. Most of it is just sugar, like the `after` and `every` functions, which are just wrappers for `setTimeout` and `setInterval`, switching the order of the arguments. There are a couple of other functions that I've found really handy, especially `once`.
 
 `once` is this great little function to prevent dealing with a big eventing architecture. One of javascript's biggest flaws, and one that people love to whinge about, is the way that you need callbacks for basically everything. This is a nice little shim to prevent that (even though it's pretty much the exact opposite of best practices.)
