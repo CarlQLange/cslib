@@ -45,11 +45,12 @@
   	console.log "called six times!"
   */
 
-  once = function(exp, fn) {
+  once = function(exp, fn, interval) {
+    if (interval == null) interval = 1000;
     if (exp()) {
       return fn();
     } else {
-      return after(1000, function() {
+      return after(interval, function() {
         return once(exp, fn);
       });
     }

@@ -1,4 +1,4 @@
-print = (msg...) -> 
+print = (msg...) ->
 	console.log(msg)
 
 ###
@@ -31,11 +31,11 @@ times 6, ->
 	console.log "called six times!"
 ###
 
-once = (exp, fn) ->
+once = (exp, fn, interval=1000) ->
 	if exp()
 		fn()
 	else
-		after 1000, -> once(exp, fn)
+		after interval, -> once(exp, fn)
 
 ###
 class V
@@ -79,13 +79,13 @@ console.log(
 String::startsWith = (s) ->
 	this[...s.length] == s
 
-String::endsWith = (s) -> 
+String::endsWith = (s) ->
 	this[this.length-s.length...] == s
 
 
 ###############
 
-class Set    
+class Set
 	constructor: (elems...) ->
 		@hash = {}
 		for elem in elems
