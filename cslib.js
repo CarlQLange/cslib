@@ -1,5 +1,5 @@
 (function() {
-  var Set, after, every, map, once, print, reduce, times,
+  var after, every, map, once, print, reduce, times,
     __slice = Array.prototype.slice;
 
   print = function() {
@@ -114,99 +114,5 @@
   String.prototype.endsWith = function(s) {
     return this.slice(this.length - s.length) === s;
   };
-
-  Set = (function() {
-
-    function Set() {
-      var elem, elems, _i, _len;
-      elems = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-      this.hash = {};
-      for (_i = 0, _len = elems.length; _i < _len; _i++) {
-        elem = elems[_i];
-        this.hash[elem] = true;
-      }
-    }
-
-    Set.prototype.add = function(elem) {
-      return this.hash[elem] = true;
-    };
-
-    Set.prototype.remove = function(elem) {
-      return delete this.hash[elem];
-    };
-
-    Set.prototype.has = function(elem) {
-      return this.hash[elem] != null;
-    };
-
-    Set.prototype.union = function(set2) {
-      var elem, set, _i, _len, _ref;
-      set = new Set();
-      for (elem in this.hash) {
-        set.add(elem);
-      }
-      _ref = set2.to_array();
-      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-        elem = _ref[_i];
-        set.add(elem);
-      }
-      return set;
-    };
-
-    Set.prototype.intersection = function(set2) {
-      var elem, set;
-      set = new Set();
-      for (elem in this.hash) {
-        if (set2.has(elem)) set.add(elem);
-      }
-      return set;
-    };
-
-    Set.prototype.minus = function(set2) {
-      var elem, set;
-      set = new Set();
-      for (elem in this.hash) {
-        if (!set2.has(elem)) set.add(elem);
-      }
-      return set;
-    };
-
-    Set.prototype.is_subset_of = function(set2) {
-      var elem;
-      for (elem in this.hash) {
-        if (!set2.has(elem)) return false;
-      }
-      return true;
-    };
-
-    Set.prototype.equals = function(set2) {
-      return this.is_subset_of(set2) && set2.is_subset_of(this);
-    };
-
-    Set.prototype.to_array = function() {
-      var elem, _results;
-      _results = [];
-      for (elem in this.hash) {
-        _results.push(elem);
-      }
-      return _results;
-    };
-
-    Set.prototype.each = function(f) {
-      var elem, _results;
-      _results = [];
-      for (elem in this.hash) {
-        _results.push(f(elem));
-      }
-      return _results;
-    };
-
-    Set.prototype.to_string = function() {
-      return this.to_array();
-    };
-
-    return Set;
-
-  })();
 
 }).call(this);
