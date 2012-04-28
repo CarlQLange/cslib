@@ -33,8 +33,8 @@ times = function(n, fn) {
   var _results;
   _results = [];
   while (n) {
-    fn();
-    _results.push(n--);
+    n--;
+    _results.push(fn());
   }
   return _results;
 };

@@ -23,8 +23,8 @@ every 300, ->
 
 times = (n, fn) ->
 	while n
-		fn()
 		n--
+		fn()
 
 ###
 times 6, ->
